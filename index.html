@@ -9,7 +9,7 @@
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
 	<!-- Google Font Roboto -->
-	<link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,300,700,100italic,300italic,400" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500,400italic,100,300,700,100italic,300italic,400" rel="stylesheet" type="text/css">
 	<!-- Bootstrap 3.3.5 -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<!-- Design Style MyWALL -->
@@ -36,24 +36,77 @@
 			} 
 		}
 		#about{
-			display: ;
+			opacity: 0;
+			transition: all 2s ease;
 		}
 		*{
 			box-sizing: border-box;
 		}
-		/* *{
-			background-image: url('./img/bg_21.png');
-		} */
+		.pills{
+			display: block;
+			border: 2px solid rgb(77, 72, 72); 
+			border-radius: 50px; 
+			
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			width: 40%;
+			text-align: center;
+			color: #1B1C3E;
+			font-size: 2rem;
+			text-decoration: none;
+			box-shadow: 1px 1px 2px 2px rgba(0,204,155,0.5);
+		}
+		nav{
+			display: flex;
+		}
+		nav div{
+			float: rigth;
+		}
+		.ico{
+			font-size: 4rem;
+			color: white;
+			padding-top: 15px;
+		}
+		.skills-icons{
+			/* list-style: none; */
+			font-size: 3rem;
+			margin-right: 20px;
+			
+		}
+		.wall-gallery{
+			box-shadow: 1px 1px 5px 5px rgba(0,30,36,0.5);
+		}
+		.popup-main{
+			display: none; /* Hidden by default */
+  			position: fixed; /* Stay in place */
+  			z-index: 1; /* Sit on top */
+  			left: 0;
+  			top: 0;
+  			width: 100%; /* Full width */
+  			height: 100%; /* Full height */
+  			overflow: auto; /* Enable scroll if needed */
+  			background-color: rgb(0,0,0); /* Fallback color */
+  			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */			
+		}
+		.popup-inside{
+			background-color: #fefefe;
+  			margin: 15% auto; /* 15% from the top and centered */
+  			padding: 20px;
+  			border: 1px solid #888;
+  			width: 80%;			
+		}
+		
 	</style>
 </head>
 <body>
-	<h1>Testing</h1>
+	
 	<!-- Header -->
 	<header style="padding-top: 40px; padding-bottom: 5px; min-height: 100vh">
 		<!-- Menu Navigation -->
 		<div id="top" class="container">
 			<!-- Menu left -->
-			<nav id="ha-header" class="left-nav ha-header">
+			<nav id="ha-header" class="left-nav ha-header" style="width: 100% display= flex; padding-bottom: 15px;">
 				<ul class="nav">
 			      <li class="dropdown">
 			      	<!-- Dropdown menu -->
@@ -65,11 +118,8 @@
 			        </a>
 			        <!-- Navigation Sections -->
 			        <ul class="dropdown-menu">
-						<!-- <li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#top" class="menu-item wall">Hello</a></li> -->
 						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#about" class="menu-item wall">About Me</a></li>
-						<!-- <li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#skills" class="menu-item wall">Skills and Abilities</a></li> -->
-						<!-- <li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#education" class="menu-item wall">Education</a></li> -->
-						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#work" class="menu-item wall">Skills & Abilities</a></li>
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#work" class="menu-item wall">Skills</a></li>
 						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#portfolio" class="menu-item wall">Portfolio</a></li>
 						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#download" class="menu-item wall">Social Networks</a></li>
 						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#contacto" class="menu-item wall" style="color: red;">Contact Me/ Hire Me</a></li>
@@ -77,36 +127,83 @@
 			      </li>
 			    </ul>
 			</nav>
+			<div style=' width:30%; float: right; display: flex; flex-direction:row;justify-content: space-evenly;'>
+				<a href="https://twitter.com/jakobma16" target="_blank" >
+					<i class="fab fa-twitter ico"></i>
+				</a>
+				<a href="https://github.com/kevinmarindev">
+					<i class="fab fa-github ico"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/kevin-marin-412303131/" target="blank">
+					<i class="fab fa-linkedin ico"></i>
+				</a>
+				</div>
 		</div>
 		<!-- // Menu Navigation -->
 
 		<!-- Personal Details -->
-		<div class="container">
+		<div class="container" style="margin-bottom: 0;">
 			<img  alt="Kevin Marin" src="img/profile3.png" style="max-height: 25vh;"/>
 			<h1 class="name-boss" style="font-weight: bold;">Kevin Marin</h1>
 			<h2 class="main-details" style="font-weight: lighter;  color: #00CD98;">Fullstack Developer.</h2>
-			<p style="color: white;" class="extend-details" id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			<p style="color: white;" class="extend-details" id="about">A curios person by nature | A technology oriented individual. <br>	<br>Curiosity along with a desire to find a true passion and a fullfilling career met at the same time and led me down a hole of understanding how the internet, and the content in it work. Despite my best efforts, I soon realized that while the world inside the my browser was bigger and more complex than expected, I realized the potetinal in it to create things with value. The feeling of never knowing enough along with the infinite room for improvement led me to pursue this carrer. <br><br> My goal is to create apps, websites and projects for good, and my purposes is to become a better developer and person while doing it. </p>
 		</div>
 		<!-- // Personal Details -->
 	</header>
-	<!-- // Header -->
-	
-	<!-- About Me Context -->
-	<!-- <section class="full-section my-about"> -->
-		<!-- Top About me -->
-		<!-- <article class="container" style="padding-top: 70px;"> -->
+		<!-- Social and Download -->
 
-				<!-- <div margin-bottom: 100px; width: 70%;> -->
-					<!-- <h2 class="title-main">About Me</h2> -->
-					<!-- <p class="text-main" style="text-align: center;">A curios being at heart, and a technology oriented individual. Curiosity along with a desire to find a true passion and career met at the same time and led me down a hole of understanding how the internet and the content in it works. Despite my best efforts I soon realized that while the world inside the my browser was bigger than expected and more complex than the Node.js Documentation, I realized the potetinal in it to create things with value. The feeling of never knowing enough along with the infinite room for improvement has led me to this. My goal is to create apps websites and projects for good and my purposes is to become a better developer and human while doing it. </p>
-				</div>
-		</article> -->
+	<!-- Portfolio -->
+	<section id="portfolio" class="full-section">
+	
+		<!-- Text Portfolio -->
+		<!-- <div class="container"> -->
+			<!-- <h2 class="title-main" style="font-size: medium;">Projects.</h2> -->
+			<!-- <p class="text-main">Here is some of my work. From the iconic calulator to full stack apps with authentication.</p> -->
+		<!-- </div> -->
+
+		<!-- Gallery -->
+		<div class="container" style="padding-top: 4%;">
+			<h2 style="font-size: 7rem; font-weight: lighter; padding-bottom: 20px;">Projects</h2>
+			<ul class="row wall-portfolio">
+
+				<li class="col-md-4 doblock"  data-git="https://github.com/kevinmarindev/Todo-App">
+				<a href="https://the-todo-listapp.herokuapp.com/"  target="_blank"><img class="wall-gallery" src="img/todo-list.png" alt="my item 2" /></a>
+				<p style="display: none;" class='pgraph'>Hey there please use the following <b>username: guest@hotmail.com and Password: guest2022 </b> to use the app as a guest, or feel free to create an account. Passwords are encrypted with the help of bcrypt. <br><br>This is a MVC fullstack CRUD todo app built with local authentication. It fetches from an API to display the home screen inpirational quote. It uses MongoDB to store the items as well as the project groups. Mongoose schemas are used to validate data, and to give the Mongo documents structure. On the front end EJS is used for templating. Express is used on the back end.<br><br> <b>Built with: CSS, EJS, Express, Passport(authentication), MongoDB(Mongoose)</b>
+				</p>
+				<a class='pills'>More Info</a>
+				
+					<!-- <p>FullStack CRUD app with Local authentication <br> Front end: HTML(EJS), CSS, JavaScript <br> Back End: Node.js(Express), MongoDB(Mongoose) <br></p> -->
+				</li>
+
+				<li class="col-md-4 doblock" data-git="https://github.com/kevinmarindev/Infamous-Calculator">
+				<a href="https://kevinmarindev.github.io/Infamous-Calculator/" target="_blank"><img class="wall-gallery" src="img/cal.png" alt="my item 1" /></a>
+				<p style="display: none;">The infamous calculator project. This calculator is inspired by the retro Toshiba calculators. Feel free to use it by clicking on the link below. <br><br><b>Built with: CSS flexbox and JavaScript</b>
+				 </p>
+				<a class='pills'>More Info</a>
+				</li>
+
+				<li class="col-md-4 doblock"><a href="img/item-3.png" data-imagelightbox="b"><img class="wall-gallery" src="img/item-3.png" alt="my item 3" /></a>
+				<a href=""class='pills'>More Info</a>
+				</li>
+			</ul>
+			<div class="popup-main">
+        		<div class="popup-inside">
+            		<h2 class="pop-title">Description</h2>
+					<p class="description"></p>
+					<a class='link-to-pro' style="margin-right: 10px;" target="_blank">Live link</a>
+					<a class="git-link" target="_blank">Github</a>
+        		</div>    
+    		</div>
+
+		</div>
+		<!-- // Gallery -->
+	</section>
 
 	<!-- skills -->
-	<section id="work" class="full-section-two bg-work" style="color: white;">
+	<section id="work" class="full-section-two bg-work" style="color: white; margin-bottom: 0;">
 		<!-- Text Work Experience -->
 		<div class="container">
-			<h2 class="title-main mywhite" style="color: white">Coding Skills</h2>
+			<h2 class="title-main mywhite" style="color: white">Skills</h2>
 			<!-- <p class="text-main mywhite">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
 		</div>
 		<!-- Work -->
@@ -115,27 +212,34 @@
 			  <ul class="nav nav-tabs" role="tablist">
 			    <li role="presentation" class="active"><a href="#1" role="tab" data-toggle="tab">Front End</a></li>
 			    <li role="presentation"><a href="#2" role="tab" data-toggle="tab">Back End</a></li>
+				</ul>
 			    <!-- <li role="presentation"><a href="#3" role="tab" data-toggle="tab">CSS</a></li>
-			    <li role="presentation"><a href="#4" role="tab" data-toggle="tab">Git & Github</a></li>
-			    <li role="presentation"><a href="#5" role="tab" data-toggle="tab">JavaScript</a></li>
-				<li role="presentation"><a href="#5" role="tab" data-toggle="tab">React</a></li> -->
+	
 			  </ul>
 
 			  <!-- Tab panes -->
 			  <div class="tab-content">
 			  	<!-- Tab 1 -->
 			    <div role="tabpanel" class="tab-pane fade active in" id="1">
-			    	<h3 class="title-wk">Front End Web Developer</h3>
-					<p class="wk-company">Google Inc.</p>
-					<p class="text-wk">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. <br> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-					<p class="wk-date">2014 - 2015</p>
+			    	<ul style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly; flex-wrap: wrap;">
+
+						<li class="skills-icons">JavaScript</li>
+						<li class="skills-icons">React.JS</li>
+						<li class="skills-icons">HTML</li>
+						<li class="skills-icons">CSS</li>
+						<li class="skills-icons">SASS</li>
+						<li class="skills-icons">Bootstrap</li>
+					</ul>
 			    </div>
 			    <!-- Tab 2 -->
 			    <div role="tabpanel" class="tab-pane fade" id="2">
-			    	<h3 class="title-wk">Wordpress Developer</h3>
-			    	<p class="wk-company">Envato</p>
-					<p class="text-wk">Duis aute irure dolor in reprehenderit in voluptate velit. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-					<p class="wk-date">2014 - 2015</p>
+			    	<ul style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly; flex-wrap: wrap;">
+						<li class="skills-icons">Node</li>
+						<li class="skills-icons">Express</i></li>
+						<li class="skills-icons">MongoDB</li>
+						<li class="skills-icons">Rest APIs</li>
+						<li class="skills-icons">Azure</li>
+					</ul>
 			    </div>
 			    <!-- Tab 3 -->
 			    <div role="tabpanel" class="tab-pane fade" id="3">
@@ -144,55 +248,13 @@
 					<p class="text-wk">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. <br> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 					<p class="wk-date">2012 - 2014</p>
 			    </div>
-			    <!-- Tab 4 -->
-			    <div role="tabpanel" class="tab-pane fade" id="4">
-						<h3 class="title-wk">Software Engineer</h3>
-						<p class="wk-company">Github</p>
-						<p class="text-wk">Duis aute irure dolor in reprehenderit in voluptate velit. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-						<p class="wk-date">2010 - 2012</p>
-			    </div>
-			    <!-- Tab 5 -->
-			    <div role="tabpanel" class="tab-pane fade" id="5">
-			    		<h3 class="title-wk">Freelancer (Web Designer)</h3>
-			    		<p class="wk-company">Freelancer</p>
-						<p class="text-wk">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. <br> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						<p class="wk-date">2008 - 2010</p>
-			    </div>
 			  </div>
 			  <!-- // Tab panes -->
 		</div>
 		<!-- // Work -->
 	</section>
 	<!-- // Work Experience -->
-
-	<!-- Portfolio -->
-	<section id="portfolio" class="full-section">
-		<!-- Text Portfolio -->
-		<div class="container">
-			<h2 class="title-main">Projects.</h2>
-			<p class="text-main">Here is some of my work. From the iconic calulator to full stack apps with authentication.</p>
-		</div>
-
-		<!-- Gallery -->
-		<div class="container">
-			<ul class="row wall-portfolio">
-				<li class="col-md-4 doblock"><a href="https://the-todo-listapp.herokuapp.com/"  target="_blank"><img class="wall-gallery" src="img/todo-list.png" alt="my item 2" /></a><p>FullStack CRUD app with Local authentication <br> Front end: HTML(EJS), CSS, JavaScript <br> Back End: Node.js(Express), MongoDB(Mongoose) <br></p>
-				</li>
-
-				<li class="col-md-4 doblock"><a href="https://kevinmarindev.github.io/Infamous-Calculator/" target="_blank"><img class="wall-gallery" src="img/cal.png" alt="my item 1" /></a><p>Retro Calculator inspired by the Toshiba B series calculators</p></li>
-
-				<li class="col-md-4 doblock"><a href="img/item-3.png" data-imagelightbox="b"><img class="wall-gallery" src="img/item-3.png" alt="my item 3" /></a></li>
-				<!-- <li class="col-md-4 doblock"><a href="img/item-4.png" data-imagelightbox="b"><img class="wall-gallery" src="img/item-4.png" alt="my item 4" /></a></li>
-				<li class="col-md-4 doblock"><a href="img/item-5.png" data-imagelightbox="b"><img class="wall-gallery" src="img/item-5.png" alt="my item 5" /></a></li>
-				<li class="col-md-4 doblock"><a href="img/item-6.png" data-imagelightbox="b"><img class="wall-gallery" src="img/item-6.png" alt="my item 6" /></a></li> -->
-			</ul>
-		</div>
-		<!-- // Gallery -->
-	</section>
-	<!-- // Portfolio -->
-
-	<!-- Social and Download -->
-	<section id="download" class="full-download">
+		<section id="download" class="full-download" style="margin-top: 0;" style="margin: 0">
 		<div class="container">
 			<!-- <div class="row"> -->
 				<!-- Social Networks -->
@@ -216,7 +278,9 @@
 			<!-- </div> -->
 		</div>
 	</section>
-	<!-- // Social and Download -->
+	
+
+
 
 	<!-- Contact me -->
 	<section id="contacto" class="full-section-three bg-contact">
@@ -290,6 +354,8 @@
 	<!-- Menu Scrolling -->
 	<script src="js/waypoints.min.js"></script>
 	<script>
+
+	//submit form
 	const form = document.querySelector('.myform');
 
 	async function handleSubmit(e){
@@ -312,11 +378,44 @@
 
 	form.addEventListener('submit', handleSubmit)
 
+	//Display about me text
+
 	let about = document.querySelector('#about')
-	let height = document.querySelector('header').height
-	// window.addEventListener('scroll', ()=>{
-	// 	console.log('working')
-	// })
+	let header = document.querySelector('header')
+	let height = document.querySelector('header').offsetHeight
+	header.addEventListener('wheel', ()=>{
+		console.log(window.scrollY, window.screenY)
+		if(window.scrollY > (height / 20)) about.style.opacity = '1'
+	})
+
+	//POPUP WINDOW
+
+	let pills = document.querySelectorAll('.pills');
+	let bigContainer = document.querySelector('.popup-main')
+	let pgraph = document.querySelector('.description')
+	const linkToPro = document.querySelector('.link-to-pro')
+	const linkToGit = document.querySelector('.git-link')
+	
+
+	pills.forEach(pill => pill.addEventListener('click', displayText))
+	// pills.forEach(pill => pill.addEventListener('click', hideBox))
+	bigContainer.addEventListener('click', hideBox)
+
+	function displayText(e){
+		// console.log(e.target, e.currentTarget.parentNode.dataset.title)
+		bigContainer.style.display = 'block'
+		// console.log(e.currentTarget.parentNode.dataset.git, linkToGit)
+		pgraph.innerHTML = e.currentTarget.parentNode.childNodes[3].innerHTML
+		linkToPro.setAttribute('href', `${e.currentTarget.parentNode.childNodes[1].href}`);
+
+		linkToGit.setAttribute('href', `${e.currentTarget.parentNode.dataset.git}`)
+	}
+
+	function hideBox(e){
+		console.log(e.target, bigContainer)
+		if(e.target === bigContainer) bigContainer.style.display = "none"
+	}
+
 
 	</script>
 	
