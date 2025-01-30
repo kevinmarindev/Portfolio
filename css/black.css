@@ -96,7 +96,7 @@ header {
     background-size: cover;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    color: #FFF;
+    color: black;
     cursor: default;
     background-color: #0CD2A4;
     border: 2px solid #0CD2A4;
