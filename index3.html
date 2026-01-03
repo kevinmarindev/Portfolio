@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+	<meta name="robots" content="index, follow"/>
+	<link rel="icon" href="./img/programming.png" type="image/png">
+	<title>Kevin Jacob Marin Portfolio</title>
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+
+	<!-- Google Font Roboto -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500,400italic,100,300,700,100italic,300italic,400" rel="stylesheet" type="text/css">
+	<!-- Bootstrap 3.3.5 -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<!-- Design Style MyWALL -->
+	<link rel="stylesheet" type="text/css" href="css/mywall.min.css" />
+	<!-- Black Style MyWALL -->
+	<link rel="stylesheet" type="text/css" href="css/black.css" />
+	<!-- Font awesome icons -->
+	<script src="https://kit.fontawesome.com/6f4f46d62c.js" crossorigin="anonymous"></script>
+	<script></script>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		.extend-details, .first-container{
+			overflow: hidden;
+		}
+		.mobile-text{
+			display: none;
+			color: white
+		}
+		#about{
+			opacity: 1;
+			transition: all 2s ease;
+		}
+		.head-social{
+			width:20%; float: right; display: flex; flex-direction:row;justify-content: space-evenly;
+		}
+		.pills{
+			display: block;
+			border: 2px solid rgb(77, 72, 72); 
+			border-radius: 50px; 
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			width: 40%;
+			text-align: center;
+			color: #1B1C3E;
+			font-size: 2rem;
+			text-decoration: none;
+			box-shadow: 1px 1px 2px 2px rgba(0,204,155,0.5);
+		}
+		nav{
+			display: flex;
+		}
+		nav div{
+			float: rigth;
+		}
+		.ico{
+			font-size: 4rem;
+			color: white;
+			padding-top: 15px;
+		}
+		.skills-icons{
+			/* list-style: none; */
+			font-size: 3rem;
+			margin-right: 20px;
+			
+		}
+		.wall-gallery{
+			box-shadow: 1px 1px 5px 5px rgba(0,30,36,0.5);
+		}
+		.popup-main{
+			display: none; /* Hidden by default */
+  			position: fixed; /* Stay in place */
+  			z-index: 1; /* Sit on top */
+  			left: 0;
+  			top: 0;
+  			width: 100%; /* Full width */
+  			height: 100%; /* Full height */
+  			overflow: auto; /* Enable scroll if needed */
+  			background-color: rgb(0,0,0); /* Fallback color */
+  			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */			
+		}
+		.popup-inside{
+			background-color: #fefefe;
+  			margin: 15% auto; /* 15% from the top and centered */
+  			padding: 20px;
+  			border: 1px solid #888;
+  			width: 80%;			
+		}
+		
+		@media screen and (max-width: 541px){
+			.main-details{
+				font-size: 10px;
+				margin-top: 10px;
+			}
+			.extend-details{
+				display: none;
+			}
+			#top{
+				padding-bottom: 25%;
+			}
+			.mobile-text{
+				display: block;
+			}
+			.head-social{
+				width: 45%;
+			}
+			
+		}
+		@media screen and (max-width: 760px){
+			.row.wall-portfolio{
+				display: flex;
+				flex-direction: column;
+				justify-content:center;
+				align-items: center;
+				/* margin: 10% 0; */
+				padding-left: 0;
+			} 
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<!-- Header -->
+	<header style="padding-top: 40px; padding-bottom: 5px; min-height: 50vh">
+		<!-- Menu Navigation -->
+		<div id="top" class="container">
+			<!-- Menu left -->
+			<nav id="ha-header" class="left-nav ha-header" style="width: 100% display= flex; padding-bottom: 15px;">
+				<ul class="nav">
+			      <li class="dropdown">
+			      	<!-- Dropdown menu -->
+			        <a class="dropdown-toggle circle-main" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">        
+						<svg class="hello" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z"/>
+						    <path d="M0 0h24v24H0z" fill="none"/>
+						</svg>
+			        </a>
+			        <!-- Navigation Sections -->
+			        <ul class="dropdown-menu">
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#about" class="menu-item wall">About Me</a></li>
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#work" class="menu-item wall">Skills</a></li>
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#portfolio" class="menu-item wall">Portfolio</a></li>
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#download" class="menu-item wall">Social Networks</a></li>
+						<li><a data-scroll data-options='{ "easing": "easeOutQuint" }' href="#contacto" class="menu-item wall" style="color: red;">Contact Me/ Hire Me</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			</nav>
+			<div class='head-social'>
+				<!-- <a href="https://twitter.com/jakobma16" target="_blank" >
+					<i class="fab fa-twitter ico"></i>
+				</a> -->
+				<a href="https://github.com/kevinmarindev">
+					<i class="fab fa-github ico"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/kevinj-marin/" target="blank">
+					<i class="fab fa-linkedin ico"></i>
+				</a>
+			</div>
+		</div>
+		<!-- // Menu Navigation -->
+
+		<!-- Personal Details -->
+		<div class="container first-container" style="margin-bottom: 0;">
+			<img  alt="Kevin Marin" src="img/profile3.png" style="max-height: 10vh;"/>
+			<h1 class="name-boss" style="font-weight: bold;">Kevin Jacob Marin</h1>
+			<h2 class="main-details" style="font-weight: lighter;  color: #00CD98; padding-bottom: 20px;">Software Developer</h2>
+			<p class="mobile-text"><b>My Goal</b><br>To create apps, websites and projects for good <br><b>My Purpose</b><br>To become a better developer and human while doing it.</p>
+			<p style="color: white; font-size: 20px;" class="extend-details" id="about">Driven by curiosity, I ventured into understanding the workings of software development and the technologies powering it. What began as a hobby gradually grew into a passion and eventually a career.</p>
+			<p style="color: white;" class="extend-details" id="about">Over the past three years, I’ve had the privilege of turning that curiosity into impactful solutions, contributing to a diverse range of projects including a point-of-sale (POS) system, REST APIs, mobile apps and platforms for secure biometric payments and document exchanges. These experiences have not only sharpened my technical skills, but also given me the ability to solve real-world problems and deliver tangible value.</p>
+			<p style="color: white;" class="extend-details" id="about">I’m excited by the challenge of constant learning and the infinite potential for growth in this field. My goal is to continue building and contributing to innovative projects that help users and businesses succeed, while also challenging me to improve both as a developer and as an individual.</p>
+		</div>
+		<!-- // Personal Details -->
+	</header>
+	
+	<!-- Projects -->
+	<section id="portfolio" class="full-section">
+	
+		<!-- Text Portfolio -->
+		<!-- <div class="container"> -->
+			<!-- <h2 class="title-main" style="font-size: medium;">Projects.</h2> -->
+			<!-- <p class="text-main">Here is some of my work. From the iconic calulator to full stack apps with authentication.</p> -->
+		<!-- </div> -->
+
+		<!-- Gallery -->
+		<div class="container d-flex" style="padding-top: 4%;">
+			<h2 style="font-size: 7rem; font-weight: lighter; padding-bottom: 20px;">Projects</h2>
+			<ul class="row wall-portfolio flex justify-content-center">
+
+				<li class="col-sm-6 doblock" data-git="https://github.com/allaboutmike/smart-kitchen-mgmt">
+				<a href="https://legendary-fox-495ba2.netlify.app/" target="_blank">
+					<img class="wall-gallery" src="img/restaurant.png" alt="Dine Flow" />
+				</a>
+				<p style="display: none;">
+					Dine Flow is a Smart Kitchen Management Tool that integrates a POS system with real-time tracking and predictive insights for restaurant operations. Key features include: Digital Ticketing: Tracks orders from POS to kitchen seamlessly. Real-Time Inventory Management: Automatically deducts ingredient stock as orders are completed. Predictive Prep Recommendations: Uses historical data to optimize food prep timing. Menu Engineering Dashboard: Provides insights on profitability, waste, and ingredient costs. Automated Supply Reordering: Integrates with supplier APIs to restock ingredients when needed. Comprehensive Management: Enables tracking of orders, menu updates, and staff performance.<br><br> 
+					<!-- To use the app as a guest please use the following credentials: <br><b>Username: guest@hotmail.com</b><br><b>Password: Guest2022</b><br><br> -->
+					<b>Built with: TypeScript, Python, Next.js, Express.js, PostgreSQL, Tailwind. </b>
+				
+				 </p>
+				 <Button class="pills" style="padding: 0; background-color: white;">More Info</Button>
+				<!-- <a class='pills'>More Info</a> -->
+				</li>
+				
+				<li class="col-sm-6 doblock" data-git="https://github.com/kevinmarindev/Package-Tracker">
+				<a href="https://package-tracker-us.herokuapp.com/" target="_blank">
+					<img class="wall-gallery" src="img/package.png" alt="Package Tracker App" />
+				</a>
+				<p style="display: none;">
+					This is a Fullstack React Application with local authentication. It allows you to track packages from USPS, UPS and Fedex and see their respective tracking history all in one page. No need for multiple tabs/websites to track your packages. All your tracking numbers in one place. <br><br> 
+					To use the app as a guest please use the following credentials: <br><b>Username: guest@hotmail.com</b><br><b>Password: Guest2022</b><br><br>
+					<b>Built with: React, Express, MongoDB(Mongoose), Passport.js, React-Bootstrap. </b>
+				
+				 </p>
+				 <Button class="pills" style="padding: 0; background-color: white;">More Info</Button>
+				<!-- <a class='pills'>More Info</a> -->
+				</li>
+
+				<li class="col-sm-6 doblock"  data-git="https://github.com/kevinmarindev/Compound-exercises">
+				<a href="https://compoundexcerciseslog.netlify.app/"  target="_blank"><img class="wall-gallery" src="img/compound.png" alt="my item 2" /></a>
+				<p style="display: none;" class='pgraph'>This app allows you to track how you are performing in the four most important gym exercises commonly known as compound lifts. Users can insert their respective performance numbers for an exercise, and the chart will display the data visually making it easier for users to analyze their performance.<br><br>This is a React-TypeScript project. It uses the library Chart.js to present the inserted data visually through responsive charts. MUI5 is used to style the application. Local storage is used to store all of the users' data.<br><br>
+				This project solidified my TypeScript knowledge and gave me the opportunity to implement MUI5 in a react application.
+				<br><br>
+				<b>Built with: MUI5, React, TypeScript, Local storage</b>
+				</p>
+				<Button class="pills" style="padding: 0; background-color: white;">More Info</Button>
+				</li>
+
+				<li class="col-sm-6 doblock"  data-git="https://github.com/kevinmarindev/task-tracker/">
+				<a href="https://the-task-tracker-app.herokuapp.com/"  target="_blank"><img class="wall-gallery" src="img/project-tracker.png" alt="my item 2" /></a>
+				<p style="display: none;" class='pgraph'>This is a MVC fullstack CRUD project tracking app built with local authentication. It fetches from an API to display the home screen inspirational quote. It uses MongoDB to store the items as well as the project groups. Mongoose schemas are used to validate data, and to give the Mongo documents structure. On the front end EJS is used for templating. Express is used on the back end.<br><br>
+				To use the app as guest please use the following credentials:<br><b>Username: guest@hotmail.com</b><br><b>Password: guest2022</b><br><br>
+				<b>Built with: CSS, EJS, Express, Passport(authentication), MongoDB(Mongoose)</b>
+				</p>
+				<Button class="pills" style="padding: 0; background-color: white;">More Info</Button>
+				</li>
+
+				<li class="col-sm-6 col-6 doblock" data-git="https://github.com/kevinmarindev/Infamous-Calculator">
+				<a href="https://kevinmarindev.github.io/Infamous-Calculator/" target="_blank"><img class="wall-gallery" src="img/cal.png" alt="calculator" /></a>
+				<p style="display: none;">The infamous calculator project. This calculator is inspired by the retro Toshiba calculators. Feel free to use it by clicking on the link below. <br><br><b>Built with: CSS flexbox and JavaScript</b>
+				 </p>
+				<Button class="pills" style="padding: 0; background-color: white;">More Info</Button>
+				</li>
+
+				
+			</ul>
+			<div class="popup-main">
+        		<div class="popup-inside">
+            		<h2 class="pop-title">Description</h2>
+					<p class="description"></p>
+					<a class='link-to-pro' style="margin-right: 10px;" target="_blank">Live link</a>
+					<a class="git-link" target="_blank">Github</a>
+        		</div>    
+    		</div>
+
+		</div>
+		<!-- // Gallery -->
+	</section>
+	<!-- skills -->
+	<section id="work" class="full-section-two bg-skills" style="color: white; margin-bottom: 0;">	 
+		<div class="container" style="padding-bottom: 150px;">
+			<div class="container">
+				<h2 class="title-main mywhite" style="color: white">Skills</h2>
+			</div>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#1" role="tab" data-toggle="tab">Languages</a></li>
+			    <li role="presentation"><a href="#2" role="tab" data-toggle="tab">Front-End</a></li>
+				<li role="presentation"><a href="#3" role="tab" data-toggle="tab">Back-End</a></li>
+			    <li role="presentation"><a href="#4" role="tab" data-toggle="tab">Others</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			  	<!-- Tab 1 -->
+			    <div role="tabpanel" class="tab-pane fade active in" id="1">
+					<ul style="display: flex; flex-direction: row; width: 100%; justify-content: center; flex-wrap: wrap; list-style: none;">
+						<li class="skills-icons">JavaScript</li>
+						<li class="skills-icons">TypeScript </li>
+					</ul>
+			    	<ul style="display: flex; flex-direction: row; width: 100%; gap: 20px;justify-content: center; flex-wrap: wrap; list-style: none;">
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> 
+						</a>
+						<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="50" height="50"/> 
+						</a>
+					</ul>
+			    </div>
+			    <!-- Tab 2 -->
+			    <div role="tabpanel" class="tab-pane fade" id="2">
+			    	<ul style="display: flex; flex-direction: row; width: 100%; justify-content: center; flex-wrap: wrap;  list-style: none;">
+						<li class="skills-icons">React.JS</li>
+						<li class="skills-icons">React Native</li>
+						<li class="skills-icons">Next.js</li>
+						<li class="skills-icons">Redux</li>
+						<li class="skills-icons">HTML</li>
+						<li class="skills-icons">CSS</li>
+						<li class="skills-icons">SASS</li>
+						<li class="skills-icons">Bootstrap</li>
+						<li class="skills-icons">MUI5</li>
+						<li class="skills-icons">Chart.js</li>
+						<li class="skills-icons">Tailwind</li>
+					</ul>
+					<ul style="display: flex; flex-direction: row; width: 100%; gap: 20px; justify-content: center; flex-wrap: wrap; list-style: none;">
+						<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="50" height="50"/> </a> 
+						<a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="50" height="50"/> 
+						</a>
+						<a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="50" height="50"/> 
+						</a>
+						<a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="50" height="50"/> 
+						</a>
+						<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="50" height="50"/> 
+						</a>
+						<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="50" height="50"/> 
+						</a>
+						<a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="50" height="50"/> 
+						</a>
+						<a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="50" height="50"/> 
+						</a>
+						<a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="./img/material-ui-1.svg" alt="MUI5" width="50" height="50"/> 
+						</a>
+						<a href="https://www.chartjs.org" target="_blank" rel="noreferrer"> <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="50" height="50"/> 
+						</a>
+						<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="50" height="50"/> </a>
+					</ul>
+			    </div>
+			    <!-- Tab 3 -->
+				<div role="tabpanel" class="tab-pane fade" id="3">
+			    	<ul style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly; flex-wrap: wrap;  list-style: none;" >
+						<li class="skills-icons">Node</li>
+						<li class="skills-icons">Express</i></li>
+						<li class="skills-icons">Postgresql (sql)</li>
+						<li class="skills-icons">MongoDB</li>
+						<li class="skills-icons">TRPc</li>
+						<li class="skills-icons">Prisma</li>
+						<li class="skills-icons">Docker</li>
+						<li class="skills-icons">Redis</li>
+					</ul>
+					<ul style="display: flex; flex-direction: row; gap: 20px; width: 100%; justify-content: center; flex-wrap: wrap; list-style: none;">
+						<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/> </a> 
+						<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="50" height="50"/> 
+						</a>
+						<a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="50" height="50"/>	
+						</a>
+						<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="50" height="50"/> 
+						</a>
+						<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="./img/trpc.svg" alt="TRPC" width="50" height="50"/> 
+						</a>
+						<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="./img/prisma.svg" alt="Prisma" width="50" height="50"/> 
+						</a>
+						<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="50" height="50"/> 
+						</a>
+						<a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="50" height="50"/> </a>
+					</ul>
+			    </div>
+		
+				<div role="tabpanel" class="tab-pane fade" id="4">
+			    	<ul style="display: flex; flex-direction: row; width: 100%; justify-content: space-evenly; flex-wrap: wrap;  list-style: none;" >
+						<li class="skills-icons">Bash</li>
+						<li class="skills-icons">Figma</i>
+						<li class="skills-icons">Firebase</li>
+						<li class="skills-icons">Git</li>
+						<li class="skills-icons">Heroku</li>
+						<li class="skills-icons">Jest</li>
+						<li class="skills-icons">Postman</li>
+					</ul>
+					<ul style="display: flex; flex-direction: row; width: 100%; gap: 20px; justify-content: center; flex-wrap: wrap; list-style: none;">
+						<a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="50" height="50"/> 
+						</a>
+						<a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="50" height="50"/> 
+						</a> 
+						<a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="50" height="50"/> 
+						</a> 
+						<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="50" height="50"/> 
+						</a> 
+						<a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="50" height="50"/> 
+						</a>  
+						<a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="50" height="50"/> 
+						</a> 
+						<a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="50" height="50"/> 
+						</a>
+					</ul>
+			    </div>
+			  </div>
+			  <!-- // Tab panes -->
+		</div>
+		<!-- <div class="container" style="padding-bottom: 120px;">
+			<h2 class="title-main mywhite" style="color: white">Work Experience</h2>
+			<p class="text-main">I began my professional career as a Front-End Developer but quickly developed a strong interest in Back-End Development. This passion enabled me to grow into a well-rounded developer with professional experience in both front-end and back-end development.
+			</p>
+			<div class="tab-content">
+			    <div>
+			    	<h3 class="title-wk">Full Stack Software Developer</h3>
+					<p class="wk-company">Nexrage Studios</p>
+					<p class="text-wk">At Nexrage Studios, I’ve had the opportunity to work on both front-end and back-end development for a variety of projects, including an ACH Payments Platform, Point of Sale system, mobile apps and more.</p>
+					<p class="wk-date">June 2022 - Current</p>
+			    </div>
+			  </div>
+		</div> -->
+		<!-- Text Work Experience -->
+		
+		<!-- Work -->
+		
+		<!-- // Work -->
+	</section>
+	<section id="experience" class="full-section">
+	</section>
+
+
+
+	
+	<!-- // Work Experience -->
+		<!-- <section id="download" class="full-download" style="margin-top: 0;" style="margin: 0">
+		<div class="container"> -->
+			<!-- <div class="row"> -->
+				<!-- Social Networks -->
+				<!-- <div class="col-sm-12 btn-class col-md-7">
+					<div style='display: flex; justify-content: center;'> -->
+					<!-- <a href="https://twitter.com/jakobma16" class="social-ink" target="_blank">
+						<img  src="img/twitter-icon.png" alt="twitter"/>
+					</a> -->
+					<!-- <a href="https://github.com/kevinmarindev" class="social-ink"  style='width:108px; height:108px;'>
+						<i class="fab fa-github socl" style='font-size: 64px; color: white'></i>
+					</a>
+					<a href="https://www.linkedin.com/in/kevinj-marin/" class="social-ink" target="blank">
+						<img class="socl" src="img/linkedin-icon.png" alt="linkedin"/>
+					</a>
+					</div>
+				</div> -->
+				<!-- Download Resume - CV -->
+				<!-- <div class="col-sm-5 btn-class hidden-sm hidden-xs"> -->
+					<!-- <a class="btn-dwnld" href="./resume/KM-Resume-July.pdf">Resume</a> -->
+					<!-- <Button class="btn-dwnld" style="border: solid white 2px;">
+						<a href="./resume/Kevin-Jacob-Marin-resume.pdf" style="text-decoration: none; border: none; color: #00CD98;">Resume</a>
+					</Button>
+				</div> -->
+			<!-- </div> -->
+		<!-- </div>
+	</section> -->
+	
+<!-- chnaged resume -->
+<!-- super minor chnage -->
+
+
+	<!-- Contact me -->
+	<section id="contacto" class="full-section-three bg-contact">
+		<div class="container">
+			<!-- Title Contact me -->
+			<h1 class="title-ct">Contact me.</h1>
+			<p class="separator-ct"></p>
+			<!-- <div> -->
+				
+				<!--Mail -->
+				<!-- <div class="col-md-6 col-xs-12 txt-center">
+					<p class="icon-ct glyphicon glyphicon-send"></p>
+					<p class="text-ct">kevin.marin777@gmail.com</p>
+				</div>
+				<div class="col-md-6 col-xs-12 txt-center">
+					<p class="icon-ct glyphicon glyphicon-earphone"></p>
+					<p class="text-ct">(469)-315-0668</p>
+				</div> -->
+			<!-- </div> -->
+			<!-- Localization -->
+			 <div class="col-xs-12 txt-center flex-1 pb-4">
+					<p class="icon-ct glyphicon glyphicon-map-marker"></p>
+					<p class="text-ct"><b>Dallas, Texas</b></p>
+		    </div>
+			<div class="row">
+				<!-- <div class="col-md-6 col-xs-12 txt-center">
+					<p class="icon-ct glyphicon glyphicon-map-marker"></p>
+					<p class="text-ct"><b>Dallas, Texas</b></p>
+				</div> -->
+				<!--Mail -->
+				<div class="col-md-6 col-xs-12 txt-center">
+					<p class="icon-ct glyphicon glyphicon-send"></p>
+					<p class="text-ct">kevin.marin777@gmail.com</p>
+				</div>
+				
+				<div class="col-md-6 col-xs-12 txt-center">
+					<p class="icon-ct glyphicon glyphicon-earphone"></p>
+					<p class="text-ct">(469)-315-0668</p>
+				</div>
+			</div>
+		</div>
+		<!-- testing -->
+		<!-- <article class="container cntme">
+			<form action="https://formspree.io/f/mrgryjda"
+ 			 method="POST" class="myform">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+					  <input type="text" class="form-control ct-name" name="name" id="name" placeholder="Your Name" required>
+					</div>
+					<div class="col-md-6 col-md-offset-3">
+					  <input type="email" class="form-control ct-mail" name="_replyto" id="email" placeholder="Email" required>
+					</div>
+					<div class="col-md-6 col-md-offset-3">
+					  <textarea class="form-control" rows="6" name="message" id="message" placeholder="Write anything here..." required></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div id="successmsg"></div>
+						<button type="submit" name="button" id="button" class="btn btnc2 with-br btn-ctc"><span>Send</span></button>
+					</div>
+					
+				</div>
+			</form>
+		</article> -->
+		<!-- // Contact Form -->
+	</section>
+	<!-- // Contact me -->
+	
+
+	<!-- Footer -->
+	<footer class="full-footer">
+		<div class="container padding-footer">
+			<div class="row">
+				<!-- Text Left -->
+				<div class="col-sm-8 foo-left">Made it to the end.</div>
+				<!-- Text Right -->
+				<div class="col-sm-4 foo-right">God Bless
+					<!-- <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> -->
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- // Footer -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Smooth-scroll -->
+	<script src="js/smooth-scroll.min.js"></script>
+	<!-- Menu Scrolling -->
+	<script src="js/waypoints.min.js"></script>
+	<script>
+
+	//submit form
+	const form = document.querySelector('.myform');
+
+	async function handleSubmit(e){
+		e.preventDefault();
+		let status = document.querySelector('.form-status');
+		let data = new FormData(e.target);
+		fetch("https://formspree.io/f/mrgryjda", {
+			method: "POST",
+			body: data,
+			headers: {
+				'Accept': 'application/json'
+			}
+		}).then(response => {
+			console.log("yese it sent")
+			alert("Submission Succesful, I will get back to you soon")
+			form.reset()
+		}).catch(error => {
+			status.innerText = "ooops something went wrong";
+		});
+	}
+
+	form.addEventListener('submit', handleSubmit)
+
+	//Display about me text
+
+	// let about = document.querySelector('#about')
+	// let header = document.querySelector('header')
+	// let height = document.querySelector('header').offsetHeight
+	// header.addEventListener('wheel', ()=>{
+	// 	console.log(window.scrollY, window.screenY)
+	// 	if(window.scrollY > (height / 20)) about.style.opacity = '1'
+	// })
+
+	//POPUP WINDOW
+
+	let pills = document.querySelectorAll('.pills');
+	let bigContainer = document.querySelector('.popup-main')
+	let pgraph = document.querySelector('.description')
+	const linkToPro = document.querySelector('.link-to-pro')
+	const linkToGit = document.querySelector('.git-link')
+	
+
+	pills.forEach(pill => pill.addEventListener('click', displayText))
+	// pills.forEach(pill => pill.addEventListener('click', hideBox))
+	bigContainer.addEventListener('click', hideBox)
+
+	function displayText(e){
+		// console.log(e.target, e.currentTarget.parentNode.dataset.title)
+		bigContainer.style.display = 'block'
+		// console.log(e.currentTarget.parentNode.dataset.git, linkToGit)
+		pgraph.innerHTML = e.currentTarget.parentNode.childNodes[3].innerHTML
+		linkToPro.setAttribute('href', `${e.currentTarget.parentNode.childNodes[1].href}`);
+
+		linkToGit.setAttribute('href', `${e.currentTarget.parentNode.dataset.git}`)
+	}
+
+	function hideBox(e){
+		console.log(e.target, bigContainer)
+		if(e.target === bigContainer) bigContainer.style.display = "none"
+	}
+
+	// screen.orientation.lock("portrait").
+	// 	then(success => console.log(success), fail => console.log(fail))
+	</script>
+	
+</body>
+</html>
