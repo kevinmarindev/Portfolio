@@ -1,7 +1,7 @@
 /* Modern Minimalist Portfolio Styles */
 :root {
   /* Color scheme */
-  --bg: #fafafa;
+  --bg: #f4f5f7;
   --fg: #2d2d2d;
   --accent: #0070f3;
   --light-accent: rgba(0, 112, 243, 0.1);
@@ -34,6 +34,8 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg);
+  /* background: linear-gradient(135deg, #f0f4ff 0%, #fafaff 40%, #eaeaff 100%); */
+
   color: var(--fg);
   line-height: 1.6;
   font-size: 16px;
@@ -58,7 +60,8 @@ a:hover {
 /* Header */
 .header {
   padding: var(--spacing-md) 0;
-  background: url(../img/bg_21.png) no-repeat center center;
+
+  /* background: url(../img/bg_21.png) no-repeat center center; */
 }
 
 .header__content {
@@ -70,12 +73,12 @@ a:hover {
 }
 
 .header__avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 20%;
   object-fit: cover;
   margin-bottom: var(--spacing-sm);
-  border: 3px solid var(--accent);
+  /* border: 3px solid var(--accent); */
   transition: transform 0.3s ease;
 }
 
@@ -88,18 +91,21 @@ a:hover {
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
   letter-spacing: -0.02em;
+  /* color: #5eead4; */
 }
 
 .header__title {
   font-size: 1.25rem;
   color: var(--accent);
+  text-shadow: 0 0 8px rgba(0, 112, 243, 0.7), 0 0 16px rgba(0, 112, 243, 0.2);
+
   font-weight: 500;
   margin-bottom: var(--spacing-sm);
 }
 
 .header__bio {
   max-width: 540px;
-  color: var(--muted);
+  /* color: var(--muted); */
   margin: 0 auto;
 }
 
@@ -123,6 +129,7 @@ a:hover {
   width: 40px;
   height: 3px;
   background-color: var(--accent);
+  box-shadow: 0 0 3px rgba(0, 112, 243, 0.7), 0 0 7px rgba(0, 112, 243, 0.2);
 }
 
 /* Projects */
@@ -133,9 +140,13 @@ a:hover {
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--card);
   border-radius: 8px;
   overflow: hidden;
+  max-width: 30%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -164,19 +175,21 @@ a:hover {
 
 .project__description {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 /* Skills */
 .skills {
+  margin-top: var(--spacing-md);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
 .skill {
-  background: var(--light-accent);
-  color: var(--accent);
+  background: #fdc58b;
+  color: black;
+  opacity: 0.7;
   padding: 6px 16px;
   border-radius: 40px;
   font-size: 0.9rem;
@@ -189,7 +202,7 @@ a:hover {
   border-radius: 8px;
   padding: var(--spacing-md);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  background: url(../img/bg_21.png) no-repeat center center;
+  /* background: url(../img/bg_21.png) no-repeat center center; */
 
   text-align: center;
 }

@@ -1,0 +1,234 @@
+/* ====== Minimal Modern Portfolio ====== */
+
+/* Font & Base Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #f9fafb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #3b82f6;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* ===== Header ===== */
+.header {
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.header__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.header__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.header__title {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.header__bio {
+  max-width: 550px;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.section {
+  margin-top: 4rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text);
+}
+
+/* ===== Projects ===== */
+.projects {
+  display: grid;
+  gap: 2rem;
+}
+
+.project {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.project__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project__content {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  padding: 1.25rem 1.5rem;
+}
+
+.project__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.project__description {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Skills ===== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.skill {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.skill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ===== Contact ===== */
+.contact {
+  text-align: center;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 3rem 1.5rem;
+}
+
+.contact__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.contact__text {
+  color: var(--muted);
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+}
+
+.contact__email {
+  display: inline-block;
+  color: white;
+  background-color: var(--accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.contact__email:hover {
+  background-color: #2563eb;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.social-link {
+  color: var(--muted);
+  font-size: 1.5rem;
+  transition: color 0.25s ease;
+}
+
+.social-link:hover {
+  color: var(--accent);
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
